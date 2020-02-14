@@ -36,18 +36,18 @@ while True:
 #params = urlencode({'fieldX': eka_muuttuja, 'fieldY':toka_muuttuja, 'fieldZ':kolmas_muuttuja, 'key':key })
 
 def pilveen():
-params = urlencode({'field1': temp_c, 'key':key })
-headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-conn = HTTPConnection("api.thingspeak.com:80")
-   try:
-    conn.request("POST", "/update", params, headers)
-    response = conn.getresponse()
-    print(cputempJari)
-    print(response.status, response.reason)
-    data = response.read()
-    conn.close()
-    time.sleep(sleep)
-   except:
-    print("connection failed")
-   break
+ params = urlencode({'field1': temp_c, 'key':key })
+ headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
+ conn = HTTPConnection("api.thingspeak.com:80")
+  try:
+   conn.request("POST", "/update", params, headers)
+   response = conn.getresponse()
+   print(cputempJari)
+   print(response.status, response.reason)
+   data = response.read()
+   conn.close()
+   time.sleep(sleep)
+  except:
+   print("connection failed")
+  break
 
