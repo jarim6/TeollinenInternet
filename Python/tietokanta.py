@@ -10,7 +10,7 @@ n_loops = 1  # Silmukkalaskuri, alustetaan 1:een
 sleep = 5  # 5 sekunnin odotus
 
 # Luodaan yhteys PostGres-tietokantaan
-conn_to_db = connect("dbname=tietokantasi_nimi user=käyttäjätunnuksesi password=salasanasi")
+conn_to_db = connect("dbname=raspi user=raspi password=raspi")
 
 try:
     while True:
@@ -35,8 +35,8 @@ try:
                 measurement = data["field1"]
                 cursor = conn_to_db.cursor()
 
-                sql = "INSERT INTO taulun_nimi (sarake1, sarake2, sarake3) VALUES (%s, %s, %s);"
-                val = ("JH", measurement, timestamp)
+                sql = "INSERT INTO raspi (temperature, timestamp) VALUES (%s, %s);"
+                val = (measurement, timestamp)
                 cursor.execute(sql, val)
 
                 conn_to_db.commit()
