@@ -1,5 +1,7 @@
 Python virtuaaliympäristön luonti:
+
 Teoriaa/Ohje_virtuaaliympäristö.pdf
+
 Tässä projektissa TeollinenInternet/Python/
 
 Tietokantaa ei ole tähän projektiin erikseen lisätty, kun koulun ja omassa käytössä olevien possujen versioero on liian suuri.
